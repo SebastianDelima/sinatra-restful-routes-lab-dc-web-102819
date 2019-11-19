@@ -16,7 +16,12 @@
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="delete">
     </form>
-  
+    
+    <form action='/recipes/<%=@recipe.id%>/edit'>
+    
+    <a href= '/recipes/<%=@recipe.id%>/edit'>edit</a>
+   </form>
+
 
 
   </body>

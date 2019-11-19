@@ -29,10 +29,23 @@ end
     @recipe.delete
     redirect to '/recipes'
   end
-  
+
+
+  patch '/recipies/:id' do
+    recipe = params[:id]
+    name = params[:name]
+    ingredients = params[:ingredients]
+    cook_time = params[:cook_time]
+  Recipie.uptade(name: name, ingredients: ingredients, cook_time: cook_time)
+  redirect '/recipies/#{recipe.id}'
+end
+
+
   get '/recipes/:id/edit' do
-    @recipe = 
-   erb: edit
+    @recipe = Recipe.find(params[:id])
+   erb :edit
   end
+ 
+  
 
 end

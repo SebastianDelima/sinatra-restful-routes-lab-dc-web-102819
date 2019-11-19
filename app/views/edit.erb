@@ -7,12 +7,19 @@
   </head>
   <body>
  
-    <form action='/recipes/<%= @recipe.id %>/edit' method="POST">
-    <input type="hidden" name="_method" value="GET">
-    <input type="submit" value="delete">
-    </form>
+  <div>
+   <form action='/recipes/<%= @recipe.id %>' method ="POST">
+   <input id="hidden" type = "hidden" name="_method" value="PATCH">
+        <label for = "name">name</label>
+        <input type ="text" name = "name" value = "<%= @recipe.name%>">
+        <label for = "ingredients">ingredients </label>
+        <input type ="text" name = "ingredients" value = "<%= @recipe.ingredients%>">
+        <label for = "cook_time">cook_time </label>
+        <input type ="text" name = "cook_time" value = "<%= @recipe.cook_time%>">
+        <input type  ="submit" value="edit recipe">
+      </form>
+   </div>
   
-
 
   </body>
 </html>
